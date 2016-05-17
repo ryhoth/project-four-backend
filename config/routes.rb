@@ -1,6 +1,22 @@
 Rails.application.routes.draw do
+  get 'capexpenses/index'
+
+  get 'employees/index'
+
+  get 'capexpenditures/index'
+
+  get 'operations/index'
+
+  get 'revenues/index'
+
+  get 'consultants/index'
+
+  get 'decks/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+
+  resources :decks, :consultants, :revenues, :operations, :employees, :capexpenses
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
@@ -25,6 +41,8 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
+
+
 
   # Example resource route with sub-resources:
   #   resources :products do
