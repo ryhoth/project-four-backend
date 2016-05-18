@@ -1,10 +1,12 @@
 class EmployeesController < ApplicationController
   def index
     @employees = Employee.all
+    render json: @employees, status: 200
   end
 
   def show
     @employees = Employee.find(params[:id])
+    render json: @employees, status: 200
   end
 
   def createConsultants
