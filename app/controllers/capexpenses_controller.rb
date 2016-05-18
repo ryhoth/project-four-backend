@@ -1,12 +1,12 @@
 class CapexpensesController < ApplicationController
   def index
     @capexpenses = Capexpense.all
-      render json: @capexpenses
+    render json: @capexpenses, status: 200
   end
 
   def show
     @capexpenses = Capexpense.find(params[:id])
-      render json: @capexpenses
+    render json: @capexpenses, status: 200
   end
 
   def create
