@@ -1,10 +1,12 @@
 class RevenuesController < ApplicationController
   def index
     @revenues = Revenue.all
+    render json: @stories
   end
 
   def show
     @revenues = Revenue.find(params[:id])
+    render json: @stories
   end
 
   def createConsultants

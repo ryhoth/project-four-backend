@@ -1,10 +1,12 @@
 class OperationsController < ApplicationController
   def index
     @operations = Operation.all
+    render json: @operations
   end
 
   def show
     @operations = Operation.find(params[:id])
+    render json: @operations
   end
 
   def createConsultants

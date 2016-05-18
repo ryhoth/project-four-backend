@@ -1,10 +1,12 @@
 class ConsultantsController < ApplicationController
   def index
     @consultants = Consultant.all
+    render json: @consultants
   end
 
   def show
     @consultants = Consultant.find(params[:id])
+    render json: @consultants
   end
 
   def create
