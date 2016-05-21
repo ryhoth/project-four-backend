@@ -10,10 +10,10 @@ class RevenuesController < ApplicationController
     render json: @revenues, status: 200
   end
 
-  def createConsultants
-    @revenues = Revenue.new(Revenues: params[:Revenues], Month_1: params[:Month_1], Month_2: params[:Month_2], Month_3: params[:Month_3], Month_4: params[:Month_4], Month_5: params[:Month_5], Month_6: params[:Month_6], Month_7: params[:Month_7], Month_8: params[:Month_8], Month_9: params[:Month_9], Month_10: params[:Month_10], Month_11: params[:Month_11], Month_12: params[:Month_12], Total: params[:Total])
+  def create
+    @revenues = Revenue.new( deck_id: params[:deck_id], Revenues: params[:Revenues], Month_1: params[:Month_1], Month_2: params[:Month_2], Month_3: params[:Month_3], Month_4: params[:Month_4], Month_5: params[:Month_5], Month_6: params[:Month_6], Month_7: params[:Month_7], Month_8: params[:Month_8], Month_9: params[:Month_9], Month_10: params[:Month_10], Month_11: params[:Month_11], Month_12: params[:Month_12], Total: params[:Total])
     if @revenues.save
-      render 'show', formats: [:json], handlers: [:jbuilder], status: 201
+      render json: @revenues, jbuilder: @revenues, status: 201
     else
       render json: {error: "revenues could not be created."}, status: 422
     end
@@ -23,7 +23,7 @@ class RevenuesController < ApplicationController
   def update
     @revenues = Revenue.find(params[:id])
     if @revenues.update_attributes(Revenues: params[:Revenues], Month_1: params[:Month_1], Month_2: params[:Month_2], Month_3: params[:Month_3], Month_4: params[:Month_4], Month_5: params[:Month_5], Month_6: params[:Month_6], Month_7: params[:Month_7], Month_8: params[:Month_8], Month_9: params[:Month_9], Month_10: params[:Month_10], Month_11: params[:Month_11], Month_12: params[:Month_12], Total: params[:Total])
-      render 'show', formats: [:json], handlers: [:jbuilder], status: 200
+      render 'update', formats: [:json], handlers: [:jbuilder], status: 200
     else
       render json: {error: "revenues could not be updated."}, status: 422
     end

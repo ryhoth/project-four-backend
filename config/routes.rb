@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-  get 'capexpenses/index'
-
-  get 'employees/index'
-
-  get 'capexpenditures/index'
-
-  get 'operations/index'
-
-  get 'revenues/index'
-
-  get 'consultants/index'
-
-  get 'decks/index'
+  # get 'capexpenses/index'
+  #
+  # get 'employees/index'
+  #
+  # get 'capexpenditures/index'
+  #
+  # get 'operations/index'
+  #
+  # get 'revenues/index'
+  #
+  # get 'consultants/index'
+  #
+  # get 'decks/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

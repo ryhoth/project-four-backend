@@ -9,7 +9,7 @@ class DecksController < ApplicationController
     render json: @decks, status: 200
   end
 
-  def createConsultants
+  def create
     @decks = Deck.new(name: params[:name])
     if @decks.save
       render 'show', formats: [:json], handlers: [:jbuilder], status: 201
